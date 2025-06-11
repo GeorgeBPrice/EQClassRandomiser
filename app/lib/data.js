@@ -1,0 +1,57 @@
+export const classes = [
+  "Bard",
+  "Beastlord",
+  "Berserker",
+  "Cleric",
+  "Druid",
+  "Enchanter",
+  "Magician",
+  "Monk",
+  "Necromancer",
+  "Paladin",
+  "Ranger",
+  "Rogue",
+  "Shadowknight",
+  "Shaman",
+  "Warrior",
+  "Wizard",
+];
+
+export const races = [
+  "Human",
+  "High Elf",
+  "Wood Elf",
+  "Half Elf",
+  "Dark Elf",
+  "Erudite",
+  "Barbarian",
+  "Dwarf",
+  "Halfling",
+  "Gnome",
+  "Ogre",
+  "Troll",
+  "Iksar",
+  "Vah Shir",
+  "Froglok",
+];
+
+export const genders = ["Male", "Female"];
+
+export const classRaces = {
+  Bard:       ["Half Elf", "Human", "Vah Shir", "Wood Elf"],
+  Beastlord:  ["Barbarian", "Iksar", "Ogre", "Troll", "Vah Shir"],
+  Berserker:  ["Barbarian", "Ogre", "Troll", "Vah Shir"],
+  Cleric:     ["Dark Elf", "Dwarf", "Erudite", "Froglok", "Gnome", "Half Elf", "Halfling", "High Elf", "Human"],
+  Druid:      ["Half Elf", "Halfling", "Human", "Wood Elf"],
+  Enchanter:  ["Dark Elf", "Erudite", "Gnome", "High Elf", "Human"],
+  Magician:   ["Dark Elf", "Erudite", "Gnome", "High Elf", "Human"],
+  Monk:       ["Human", "Iksar"],
+  Necromancer:["Dark Elf", "Erudite", "Froglok", "Gnome", "Human", "Iksar"],
+  Paladin:    ["Dwarf", "Erudite", "Froglok", "Gnome", "Half Elf", "Halfling", "High Elf", "Human"],
+  Ranger:     ["Half Elf", "Halfling", "Human", "Wood Elf"],
+  Rogue:      ["Barbarian", "Dark Elf", "Dwarf", "Froglok", "Gnome", "Half Elf", "Halfling", "Human", "Vah Shir", "Wood Elf"],
+  Shadowknight:["Dark Elf", "Erudite", "Froglok", "Gnome", "Human", "Iksar", "Ogre", "Troll"],
+  Shaman:     ["Barbarian", "Froglok", "Human", "Iksar", "Ogre", "Troll", "Vah Shir"],
+  Warrior:    ["Barbarian", "Dark Elf", "Dwarf", "Froglok", "Gnome", "Half Elf", "Halfling", "Human", "Iksar", "Ogre", "Troll", "Vah Shir", "Wood Elf"],
+  Wizard:     ["Dark Elf", "Erudite", "Froglok", "Gnome", "High Elf", "Human"],
+};
