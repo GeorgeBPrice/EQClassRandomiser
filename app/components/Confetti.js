@@ -59,7 +59,7 @@ export default function Confetti({ isActive }) {
             rotate: particle.rotation + 360 * 3,
           }}
           transition={{
-            duration: 4, // Slowed down from 3s to 4s
+            duration: 6,
             ease: "easeOut",
             delay: Math.random() * 0.5,
           }}
