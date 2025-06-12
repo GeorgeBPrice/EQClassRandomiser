@@ -13,14 +13,11 @@ This application allows players to randomly generate authentic EverQuest charact
 - **Dramatic Reveal System**: Sequential reveal of Gender → Race → Class with animations
 - **Countdown Animation**: Exciting 3-2-1 countdown with spinning dice
 - **Confetti Celebration**: Colorful confetti explosion when the class is revealed
-- **Dynamic Title**: Changes from "Your Base Class is..." to the selected class name
 
 ### Heroes Journey 3 Classes
 - **Toggle Mode**: Switch between single class and 3-class generation
 - **Base Class Rules**: First class follows authentic EQ race/class restrictions
 - **Additional Classes**: Second and third classes can be any class (no restrictions)
-- **Animated Reveal**: Classes appear sequentially: "Berserker/" → "Berserker/Rogue/" → "Berserker/Rogue/Necromancer"
-- **Delayed Display**: Heroes Journey path appears 0.5 seconds after base class reveal
 
 ### Visual Effects
 - **Glassmorphism Design**: Modern glass-like card interface
@@ -29,27 +26,6 @@ This application allows players to randomly generate authentic EverQuest charact
 - **Responsive Design**: Works on desktop and mobile devices
 - **Custom Toggle**: Green gradient toggle for Heroes Journey mode
 
-## 🎯 How Heroes Journey Works
-
-Heroes Journey is an innovative EverQuest system that allows characters to master multiple classes:
-
-### Base Class (First Class)
-- **Follows EQ Rules**: Must respect original race/class restrictions
-- **Examples**: 
-  - Human can be Warrior, Cleric, Paladin, etc.
-  - Dark Elf can be Enchanter, Necromancer, Shadowknight, etc.
-  - Iksar can be Warrior, Shaman, Necromancer, etc.
-
-### Additional Classes (Second & Third)
-- **No Restrictions**: Can be any class regardless of race
-- **Flexible Combinations**: Allows creative multi-class builds
-- **Strategic Depth**: Opens up new gameplay possibilities
-
-### Example Combinations
-- **Berserker/Rogue/Necromancer**: High damage + stealth + magic
-- **Cleric/Druid/Monk**: Healing + nature magic + martial arts
-- **Warrior/Enchanter/Shaman**: Combat + crowd control + buffs
-
 ## 🛠️ Technology Stack
 
 ### Frontend
@@ -57,7 +33,6 @@ Heroes Journey is an innovative EverQuest system that allows characters to maste
 - **React 19.0.0**: Latest React with concurrent features
 - **Framer Motion 12.16.0**: Advanced animations and transitions
 - **Tailwind CSS 3.4.17**: Utility-first CSS framework
-- **DaisyUI 5.0.43**: Component library for Tailwind
 
 ### Development
 - **ESLint**: Code linting and formatting
@@ -143,6 +118,27 @@ app/
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## 🎯 How Heroes Journey Works (bonus section)
+
+Heroes Journey is an innovative EverQuest system that allows characters to master multiple classes, `https://wiki.heroesjourneyemu.com/`:
+
+### Base Class (First Class)
+- **Follows EQ Rules**: Must respect original race/class restrictions
+- **Examples**: 
+  - Human can be Warrior, Cleric, Paladin, etc.
+  - Dark Elf can be Enchanter, Necromancer, Shadowknight, etc.
+  - Iksar can be Warrior, Shaman, Necromancer, etc.
+
+### Additional Classes (Second & Third)
+- **No Restrictions**: Can be any class regardless of race
+- **Flexible Combinations**: Allows creative multi-class builds
+- **Strategic Depth**: Opens up new gameplay possibilities
+
+### Example Combinations
+- **Berserker/Rogue/Necromancer**: High damage + stealth + magic
+- **Cleric/Druid/Monk**: Healing + nature magic + martial arts
+- **Warrior/Enchanter/Shaman**: Combat + crowd control + buffs
 
 ## 📄 License
 

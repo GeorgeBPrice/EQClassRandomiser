@@ -16,8 +16,6 @@ export default function RandomiserCard() {
   const [threeClasses, setThreeClasses] = useState("");
   const [showHeroesJourney, setShowHeroesJourney] = useState(false);
   const [animatedClasses, setAnimatedClasses] = useState("");
-  const [showDefaultTitle, setShowDefaultTitle] = useState(true);
-  const [resetKey, setResetKey] = useState(0);
 
   const getThreeClasses = (baseClass) => {
     const availableClasses = classes.filter(cls => cls !== baseClass);
@@ -36,9 +34,7 @@ export default function RandomiserCard() {
     setThreeClasses("");
     setShowHeroesJourney(false);
     setAnimatedClasses("");
-    setShowDefaultTitle(true);
-    setResetKey(prevKey => prevKey + 1);
-    
+
     // Countdown from 3 to 1
     for (let i = 3; i >= 1; i--) {
       setCountdown(i);
@@ -83,7 +79,6 @@ export default function RandomiserCard() {
     // Reveal class and trigger confetti after 2 seconds (big reveal)
     setTimeout(() => {
       setRevealedFields(prev => ({ ...prev, cls: true }));
-      setShowDefaultTitle(false);
       setShowConfetti(true);
     }, 2500);
     
@@ -123,18 +118,16 @@ export default function RandomiserCard() {
         animate={cardHovered ? { scale: 1.05 } : { scale: 1 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        <AnimatePresence mode="wait">
-          <motion.h2
-            key={`${resetKey}-${showDefaultTitle ? 'default' : (revealedFields.cls ? hero.cls : 'default')}`}
-            className="text-4xl font-bold mb-6 text-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            {showDefaultTitle ? "Your Base Class is..." : revealedFields.cls ? `${hero.cls}!` : "Your Hero is..."}
-          </motion.h2>
-        </AnimatePresence>
+      <motion.h2
+        className="text-4xl font-bold mb-6 text-center"
+        animate={{ 
+          scale: revealedFields.cls ? 1.05 : 1,
+          color: revealedFields.cls ? "#fbbf24" : "#ffffff"
+        }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        {revealedFields.cls ? `${hero.cls}!` : "Your Base Class is..."}
+      </motion.h2>
         
         {/* Loading/Countdown Section */}
         <AnimatePresence>
