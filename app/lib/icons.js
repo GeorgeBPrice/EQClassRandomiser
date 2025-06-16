@@ -19,7 +19,7 @@ export const classIcons = {
   Ranger: "🏹",
   Rogue: "🗡️",
   Shadowknight: "🌑",
-  Shaman: "🔮",
+  Shaman: "🐻",
   Warrior: "⚔️",
   Wizard: "🧙",
 };

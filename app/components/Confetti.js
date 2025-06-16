@@ -2,36 +2,59 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Confetti({ isActive }) {
+export default function Confetti({ isActive, onComplete }) {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
-    if (isActive) {
-      // Create confetti particles (doubled from 50 to 100)
-      const newParticles = Array.from({ length: 100 }, (_, i) => ({
-        id: i,
-        x: Math.random() * window.innerWidth,
-        y: -20,
-        rotation: Math.random() * 360,
-        color: [
-          "#ff6b6b",
-          "#4ecdc4",
-          "#45b7d1",
-          "#96ceb4",
-          "#feca57",
-          "#ff9ff3",
-          "#54a0ff",
-          "#5f27cd",
-          "#00d2d3",
-          "#ff9f43",
-        ][Math.floor(Math.random() * 10)],
-        size: Math.random() * 8 + 4,
-      }));
-      setParticles(newParticles);
-    } else {
+    if (!isActive) {
       setParticles([]);
+      return;
     }
-  }, [isActive]);
+
+    // Set a 30-second timer to stop the confetti
+    const stopTimer = setTimeout(() => {
+      if (onComplete) {
+        onComplete();
+      }
+    }, 30000);
+
+    // Create a continuous rain effect
+    const spawnInterval = setInterval(() => {
+      setParticles(prevParticles => {
+        // Remove particles that have fallen off screen
+        const activeParticles = prevParticles.filter(p => p.y < window.innerHeight + 100);
+        
+        // Add new particle
+        const newParticle = {
+          id: Date.now() + Math.random(),
+          x: Math.random() * window.innerWidth,
+          y: -20,
+          rotation: Math.random() * 360,
+          color: [
+            "#ff6b6b",
+            "#4ecdc4",
+            "#45b7d1",
+            "#96ceb4",
+            "#feca57",
+            "#ff9ff3",
+            "#54a0ff",
+            "#5f27cd",
+            "#00d2d3",
+            "#ff9f43",
+          ][Math.floor(Math.random() * 10)],
+          size: Math.random() * 8 + 4,
+        };
+        
+        return [...activeParticles, newParticle];
+      });
+    }, 50); // Spawn a new particle every 50ms
+
+    return () => {
+      clearInterval(spawnInterval);
+      clearTimeout(stopTimer);
+      setParticles([]);
+    };
+  }, [isActive, onComplete]);
 
   if (!isActive) return null;
 
@@ -61,7 +84,10 @@ export default function Confetti({ isActive }) {
           transition={{
             duration: 6,
             ease: "easeOut",
-            delay: Math.random() * 0.5,
+          }}
+          onAnimationComplete={() => {
+            // Remove particle when animation completes
+            setParticles(prev => prev.filter(p => p.id !== particle.id));
           }}
         />
       ))}

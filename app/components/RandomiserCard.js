@@ -126,7 +126,14 @@ export default function RandomiserCard() {
         }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        {revealedFields.cls ? `${hero.cls}!` : "Your Base Class is..."}
+        {revealedFields.cls ? (
+          <span className="flex items-center justify-center gap-4">
+            <span className="text-5xl">{classIcons[hero.cls]}</span>
+            <span>{hero.cls}!</span>
+          </span>
+        ) : (
+          "Your Base Class is..."
+        )}
       </motion.h2>
         
         {/* Loading/Countdown Section */}
