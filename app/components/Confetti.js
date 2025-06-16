@@ -47,7 +47,7 @@ export default function Confetti({ isActive, onComplete }) {
         
         return [...activeParticles, newParticle];
       });
-    }, 100); // Spawn a new particle every 100ms
+    }, 50); // Spawn a new particle every 50ms
 
     return () => {
       clearInterval(spawnInterval);
