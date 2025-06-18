@@ -6,6 +6,9 @@ A fun web page for randomly generating EverQuest character classes and race comb
 
 This application allows players to randomly generate authentic EverQuest character combinations up to the Planes of Power expansion. It features a dramatic reveal system with animations, confetti celebrations, and support for the innovative Heroes Journey 3-class system.
 
+![image](https://github.com/user-attachments/assets/2775dca5-003c-4708-9832-45726d28276c)
+
+
 ## 🌟 Features
 
 ### Core Randomisation
